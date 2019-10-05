@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>game</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Tables">Tables</a></li>
+<li><a href="#Fields">Fields</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/core.autoupdater.html">core.autoupdater</a></li>
+  <li><a href="../classes/core.background.html">core.background</a></li>
+  <li><a href="../classes/core.config.html">core.config</a></li>
+  <li><a href="../classes/core.gameobject.html">core.gameobject</a></li>
+  <li><a href="../classes/core.inputmanager.html">core.inputmanager</a></li>
+  <li><a href="../classes/core.soundmanager.html">core.soundmanager</a></li>
+  <li><strong>core.sprite</strong></li>
+  <li><a href="../classes/hud.health.html">hud.health</a></li>
+  <li><a href="../classes/hud.hud.html">hud.hud</a></li>
+  <li><a href="../classes/item.item.html">item.item</a></li>
+  <li><a href="../classes/item.items.redpotion.html">item.items.redpotion</a></li>
+  <li><a href="../classes/level.level.html">level.level</a></li>
+  <li><a href="../classes/level.levels.test.html">level.levels.test</a></li>
+  <li><a href="../classes/player.parts.head.html">player.parts.head</a></li>
+  <li><a href="../classes/player.parts.heads.test.html">player.parts.heads.test</a></li>
+  <li><a href="../classes/player.parts.legs.html">player.parts.legs</a></li>
+  <li><a href="../classes/player.parts.legs.test.html">player.parts.legs.test</a></li>
+  <li><a href="../classes/player.parts.torso.html">player.parts.torso</a></li>
+  <li><a href="../classes/player.parts.torsos.test.html">player.parts.torsos.test</a></li>
+  <li><a href="../classes/player.player.html">player.player</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/gamestates.audiomenu.html">gamestates.audiomenu</a></li>
+  <li><a href="../modules/gamestates.controlsmenu.html">gamestates.controlsmenu</a></li>
+  <li><a href="../modules/gamestates.fade.html">gamestates.fade</a></li>
+  <li><a href="../modules/gamestates.mainmenu.html">gamestates.mainmenu</a></li>
+  <li><a href="../modules/gamestates.menu.html">gamestates.menu</a></li>
+  <li><a href="../modules/gamestates.optionsmenu.html">gamestates.optionsmenu</a></li>
+  <li><a href="../modules/gamestates.play.html">gamestates.play</a></li>
+</ul>
+<h2>Scripts</h2>
+<ul class="nowrap">
+  <li><a href="../scripts/conf.html">conf</a></li>
+  <li><a href="../scripts/main.html">main</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>core.sprite</code></h1>
+<p>Base class for sprites (animated and static)</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Sprite.new">Sprite.new (file[, fw[, frames[, duration]]])</a></td>
+	<td class="summary">Constructor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Sprite:resetAnimation">Sprite:resetAnimation ()</a></td>
+	<td class="summary">Reset the animation back to the first frame</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Sprite:playAnimation">Sprite:playAnimation ()</a></td>
+	<td class="summary">Play the animation</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Sprite:pauseAnimation">Sprite:pauseAnimation ()</a></td>
+	<td class="summary">Pause the animation</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Sprite:stopAnimation">Sprite:stopAnimation ()</a></td>
+	<td class="summary">Pause the animation and reset it back to the first frame</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Sprite:update">Sprite:update (dt)</a></td>
+	<td class="summary">Update the sprite's animation</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Sprite:draw">Sprite:draw (x, y, r, sx, sy, ox, oy)</a></td>
+	<td class="summary">Draw the sprite on the screen</td>
+	</tr>
+</table>
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#instance.quads">instance.quads</a></td>
+	<td class="summary">Quads for animation playback</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#instance.image">instance.image</a></td>
+	<td class="summary">Renderable image loaded from the given file name</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.animated">instance.animated</a></td>
+	<td class="summary">Flag indicating whether or not the sprite is animated</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.fw">instance.fw</a></td>
+	<td class="summary">Frame width</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.fh">instance.fh</a></td>
+	<td class="summary">Frame height</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.frames">instance.frames</a></td>
+	<td class="summary">Total frames in the animation</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.duration">instance.duration</a></td>
+	<td class="summary">Playback frame duration</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.currentFrame">instance.currentFrame</a></td>
+	<td class="summary">Current frame</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.playing">instance.playing</a></td>
+	<td class="summary">Playback status</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.timer">instance.timer</a></td>
+	<td class="summary">Internal timer</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "Sprite.new"></a>
+    <strong>Sprite.new (file[, fw[, frames[, duration]]])</strong>
+    </dt>
+    <dd>
+    Constructor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">file</span>
+         An image file path
+        </li>
+        <li><span class="parameter">fw</span>
+         The width of one frame of the sprite's animation
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">frames</span>
+         The number of frames in the sprite's animation
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">duration</span>
+         The duration in seconds that each frame should span
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        A new Sprite instance
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Sprite:resetAnimation"></a>
+    <strong>Sprite:resetAnimation ()</strong>
+    </dt>
+    <dd>
+    Reset the animation back to the first frame
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Sprite:playAnimation"></a>
+    <strong>Sprite:playAnimation ()</strong>
+    </dt>
+    <dd>
+    Play the animation
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Sprite:pauseAnimation"></a>
+    <strong>Sprite:pauseAnimation ()</strong>
+    </dt>
+    <dd>
+    Pause the animation
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Sprite:stopAnimation"></a>
+    <strong>Sprite:stopAnimation ()</strong>
+    </dt>
+    <dd>
+    Pause the animation and reset it back to the first frame
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Sprite:update"></a>
+    <strong>Sprite:update (dt)</strong>
+    </dt>
+    <dd>
+    Update the sprite's animation
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+         Delta time
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Sprite:draw"></a>
+    <strong>Sprite:draw (x, y, r, sx, sy, ox, oy)</strong>
+    </dt>
+    <dd>
+    Draw the sprite on the screen
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+         X coordinate
+        </li>
+        <li><span class="parameter">y</span>
+         Y coordinate
+        </li>
+        <li><span class="parameter">r</span>
+         Orientation (radians)
+        </li>
+        <li><span class="parameter">sx</span>
+         X scale
+        </li>
+        <li><span class="parameter">sy</span>
+         Y scale
+        </li>
+        <li><span class="parameter">ox</span>
+         X origin offset
+        </li>
+        <li><span class="parameter">oy</span>
+         Y origin offset
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "instance.quads"></a>
+    <strong>instance.quads</strong>
+    </dt>
+    <dd>
+    Quads for animation playback
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Fields"></a>Fields</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "instance.image"></a>
+    <strong>instance.image</strong>
+    </dt>
+    <dd>
+    Renderable image loaded from the given file name
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.animated"></a>
+    <strong>instance.animated</strong>
+    </dt>
+    <dd>
+    Flag indicating whether or not the sprite is animated
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.fw"></a>
+    <strong>instance.fw</strong>
+    </dt>
+    <dd>
+    Frame width
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.fh"></a>
+    <strong>instance.fh</strong>
+    </dt>
+    <dd>
+    Frame height
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.frames"></a>
+    <strong>instance.frames</strong>
+    </dt>
+    <dd>
+    Total frames in the animation
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.duration"></a>
+    <strong>instance.duration</strong>
+    </dt>
+    <dd>
+    Playback frame duration
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.currentFrame"></a>
+    <strong>instance.currentFrame</strong>
+    </dt>
+    <dd>
+    Current frame
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.playing"></a>
+    <strong>instance.playing</strong>
+    </dt>
+    <dd>
+    Playback status
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.timer"></a>
+    <strong>instance.timer</strong>
+    </dt>
+    <dd>
+    Internal timer
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2019-10-05 16:50:39 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

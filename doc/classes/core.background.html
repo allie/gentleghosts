@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>game</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Tables">Tables</a></li>
+<li><a href="#Fields">Fields</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/core.autoupdater.html">core.autoupdater</a></li>
+  <li><strong>core.background</strong></li>
+  <li><a href="../classes/core.config.html">core.config</a></li>
+  <li><a href="../classes/core.gameobject.html">core.gameobject</a></li>
+  <li><a href="../classes/core.inputmanager.html">core.inputmanager</a></li>
+  <li><a href="../classes/core.soundmanager.html">core.soundmanager</a></li>
+  <li><a href="../classes/core.sprite.html">core.sprite</a></li>
+  <li><a href="../classes/hud.health.html">hud.health</a></li>
+  <li><a href="../classes/hud.hud.html">hud.hud</a></li>
+  <li><a href="../classes/item.item.html">item.item</a></li>
+  <li><a href="../classes/item.items.redpotion.html">item.items.redpotion</a></li>
+  <li><a href="../classes/level.level.html">level.level</a></li>
+  <li><a href="../classes/level.levels.test.html">level.levels.test</a></li>
+  <li><a href="../classes/player.parts.head.html">player.parts.head</a></li>
+  <li><a href="../classes/player.parts.heads.test.html">player.parts.heads.test</a></li>
+  <li><a href="../classes/player.parts.legs.html">player.parts.legs</a></li>
+  <li><a href="../classes/player.parts.legs.test.html">player.parts.legs.test</a></li>
+  <li><a href="../classes/player.parts.torso.html">player.parts.torso</a></li>
+  <li><a href="../classes/player.parts.torsos.test.html">player.parts.torsos.test</a></li>
+  <li><a href="../classes/player.player.html">player.player</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/gamestates.audiomenu.html">gamestates.audiomenu</a></li>
+  <li><a href="../modules/gamestates.controlsmenu.html">gamestates.controlsmenu</a></li>
+  <li><a href="../modules/gamestates.fade.html">gamestates.fade</a></li>
+  <li><a href="../modules/gamestates.mainmenu.html">gamestates.mainmenu</a></li>
+  <li><a href="../modules/gamestates.menu.html">gamestates.menu</a></li>
+  <li><a href="../modules/gamestates.optionsmenu.html">gamestates.optionsmenu</a></li>
+  <li><a href="../modules/gamestates.play.html">gamestates.play</a></li>
+</ul>
+<h2>Scripts</h2>
+<ul class="nowrap">
+  <li><a href="../scripts/conf.html">conf</a></li>
+  <li><a href="../scripts/main.html">main</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>core.background</code></h1>
+<p>A parallax scrolling background</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Background.new">Background.new (images[, intensity[, scale[, xOffset[, yOffset]]]])</a></td>
+	<td class="summary">Constructor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Background:autoscroll">Background:autoscroll (layer, speed, direction)</a></td>
+	<td class="summary">Enable autoscrolling on a layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Background:update">Background:update (dt)</a></td>
+	<td class="summary">Update the background autoscrolling</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Background:draw">Background:draw (scroll)</a></td>
+	<td class="summary">Draw the background</td>
+	</tr>
+</table>
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#instance.layers">instance.layers</a></td>
+	<td class="summary">Layers of the background</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.position">instance.position</a></td>
+	<td class="summary">Drawing position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.offset">instance.offset</a></td>
+	<td class="summary">Drawing offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.bounds">instance.bounds</a></td>
+	<td class="summary">The bounds to render within</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.autoscrollLayers">instance.autoscrollLayers</a></td>
+	<td class="summary">Autoscrolling layers (none by default)</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#instance.intensity">instance.intensity</a></td>
+	<td class="summary">Parallax intensity; 0 disables the effct</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.scale">instance.scale</a></td>
+	<td class="summary">Scale to draw the background with</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.layerWidth">instance.layerWidth</a></td>
+	<td class="summary">Width of one layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.limit">instance.limit</a></td>
+	<td class="summary">X coordinate limits (for drawing along the X axis)</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "Background.new"></a>
+    <strong>Background.new (images[, intensity[, scale[, xOffset[, yOffset]]]])</strong>
+    </dt>
+    <dd>
+    Constructor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">images</span>
+         A table of images to use for the layers
+        </li>
+        <li><span class="parameter">intensity</span>
+         Specifies how intense the parallax effect should be; 0 disables the effect
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">scale</span>
+         Scale to draw the background with
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">xOffset</span>
+         X offset for drawing the background
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">yOffset</span>
+         Y offset for drawing the background
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        A new Level instance
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Background:autoscroll"></a>
+    <strong>Background:autoscroll (layer, speed, direction)</strong>
+    </dt>
+    <dd>
+    Enable autoscrolling on a layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">layer</span>
+
+
+
+        </li>
+        <li><span class="parameter">speed</span>
+
+
+
+        </li>
+        <li><span class="parameter">direction</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Background:update"></a>
+    <strong>Background:update (dt)</strong>
+    </dt>
+    <dd>
+    Update the background autoscrolling
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+         Delta time
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Background:draw"></a>
+    <strong>Background:draw (scroll)</strong>
+    </dt>
+    <dd>
+    Draw the background
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">scroll</span>
+         How far along the map's X axis to calculate for; between 0 and 1
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "instance.layers"></a>
+    <strong>instance.layers</strong>
+    </dt>
+    <dd>
+    Layers of the background
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.position"></a>
+    <strong>instance.position</strong>
+    </dt>
+    <dd>
+    Drawing position
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+         X coordinate
+        </li>
+        <li><span class="parameter">y</span>
+         Y coordinate
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.offset"></a>
+    <strong>instance.offset</strong>
+    </dt>
+    <dd>
+    Drawing offset
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+         X offset
+        </li>
+        <li><span class="parameter">y</span>
+         Y offset
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.bounds"></a>
+    <strong>instance.bounds</strong>
+    </dt>
+    <dd>
+    The bounds to render within
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">w</span>
+         Width
+        </li>
+        <li><span class="parameter">h</span>
+         Height
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.autoscrollLayers"></a>
+    <strong>instance.autoscrollLayers</strong>
+    </dt>
+    <dd>
+    Autoscrolling layers (none by default)
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Fields"></a>Fields</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "instance.intensity"></a>
+    <strong>instance.intensity</strong>
+    </dt>
+    <dd>
+    Parallax intensity; 0 disables the effct
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.scale"></a>
+    <strong>instance.scale</strong>
+    </dt>
+    <dd>
+    Scale to draw the background with
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.layerWidth"></a>
+    <strong>instance.layerWidth</strong>
+    </dt>
+    <dd>
+    Width of one layer
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.limit"></a>
+    <strong>instance.limit</strong>
+    </dt>
+    <dd>
+    X coordinate limits (for drawing along the X axis)
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2019-10-05 16:50:39 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

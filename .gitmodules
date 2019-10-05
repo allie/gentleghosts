@@ -1,0 +1,12 @@
+[submodule "lib/hump"]
+	path = lib/hump
+	url = https://github.com/vrld/hump.git
+[submodule "lib/bump"]
+	path = lib/bump
+	url = https://github.com/kikito/bump.lua.git
+[submodule "lib/sti"]
+	path = lib/sti
+	url = https://github.com/karai17/Simple-Tiled-Implementation.git
+[submodule "lib/bitser"]
+	path = lib/bitser
+	url = https://github.com/gvx/bitser

@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>game</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Fields">Fields</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/gamestates.audiomenu.html">gamestates.audiomenu</a></li>
+  <li><a href="../modules/gamestates.controlsmenu.html">gamestates.controlsmenu</a></li>
+  <li><strong>gamestates.fade</strong></li>
+  <li><a href="../modules/gamestates.mainmenu.html">gamestates.mainmenu</a></li>
+  <li><a href="../modules/gamestates.menu.html">gamestates.menu</a></li>
+  <li><a href="../modules/gamestates.optionsmenu.html">gamestates.optionsmenu</a></li>
+  <li><a href="../modules/gamestates.play.html">gamestates.play</a></li>
+</ul>
+<h2>Scripts</h2>
+<ul class="nowrap">
+  <li><a href="../scripts/conf.html">conf</a></li>
+  <li><a href="../scripts/main.html">main</a></li>
+</ul>
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/core.autoupdater.html">core.autoupdater</a></li>
+  <li><a href="../classes/core.background.html">core.background</a></li>
+  <li><a href="../classes/core.config.html">core.config</a></li>
+  <li><a href="../classes/core.gameobject.html">core.gameobject</a></li>
+  <li><a href="../classes/core.inputmanager.html">core.inputmanager</a></li>
+  <li><a href="../classes/core.soundmanager.html">core.soundmanager</a></li>
+  <li><a href="../classes/core.sprite.html">core.sprite</a></li>
+  <li><a href="../classes/hud.health.html">hud.health</a></li>
+  <li><a href="../classes/hud.hud.html">hud.hud</a></li>
+  <li><a href="../classes/item.item.html">item.item</a></li>
+  <li><a href="../classes/item.items.redpotion.html">item.items.redpotion</a></li>
+  <li><a href="../classes/level.level.html">level.level</a></li>
+  <li><a href="../classes/level.levels.test.html">level.levels.test</a></li>
+  <li><a href="../classes/player.parts.head.html">player.parts.head</a></li>
+  <li><a href="../classes/player.parts.heads.test.html">player.parts.heads.test</a></li>
+  <li><a href="../classes/player.parts.legs.html">player.parts.legs</a></li>
+  <li><a href="../classes/player.parts.legs.test.html">player.parts.legs.test</a></li>
+  <li><a href="../classes/player.parts.torso.html">player.parts.torso</a></li>
+  <li><a href="../classes/player.parts.torsos.test.html">player.parts.torsos.test</a></li>
+  <li><a href="../classes/player.player.html">player.player</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>gamestates.fade</code></h1>
+<p>Fade transition state</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Fade:setDuration">Fade:setDuration (duration)</a></td>
+	<td class="summary">Set the animation duration</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Fade:setNextState">Fade:setNextState (state)</a></td>
+	<td class="summary">Set the next state the transition should fade to</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Fade:freezeScreen">Fade:freezeScreen ()</a></td>
+	<td class="summary">Capture an image of the existing screen to fade from</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Fade:fadeToNext">Fade:fadeToNext ()</a></td>
+	<td class="summary">Fade to the next state</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Fade:fadeToPrevious">Fade:fadeToPrevious ()</a></td>
+	<td class="summary">Fade to the previous state</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Fade:enter">Fade:enter ()</a></td>
+	<td class="summary">Enter (fade to next)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Fade:resume">Fade:resume ()</a></td>
+	<td class="summary">Resume (fade to previous)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Fade:draw">Fade:draw ()</a></td>
+	<td class="summary">Draw the screenshot and a fade to black on top of it</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Fade:update">Fade:update (dt)</a></td>
+	<td class="summary">Update the transition</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#self.screenshot">self.screenshot</a></td>
+	<td class="summary">Image data from the screen grabbed immediately upon entering this state</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#self.duration">self.duration</a></td>
+	<td class="summary">The fade out duration in seconds</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#self.timer">self.timer</a></td>
+	<td class="summary">Animation timer in seconds</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#self.direction">self.direction</a></td>
+	<td class="summary">Whether to transition forward or backward</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "Fade:setDuration"></a>
+    <strong>Fade:setDuration (duration)</strong>
+    </dt>
+    <dd>
+    Set the animation duration
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">duration</span>
+         The duration (in seconds)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Fade:setNextState"></a>
+    <strong>Fade:setNextState (state)</strong>
+    </dt>
+    <dd>
+    Set the next state the transition should fade to
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">state</span>
+         The next state
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Fade:freezeScreen"></a>
+    <strong>Fade:freezeScreen ()</strong>
+    </dt>
+    <dd>
+    Capture an image of the existing screen to fade from
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Fade:fadeToNext"></a>
+    <strong>Fade:fadeToNext ()</strong>
+    </dt>
+    <dd>
+    Fade to the next state
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Fade:fadeToPrevious"></a>
+    <strong>Fade:fadeToPrevious ()</strong>
+    </dt>
+    <dd>
+    Fade to the previous state
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Fade:enter"></a>
+    <strong>Fade:enter ()</strong>
+    </dt>
+    <dd>
+    Enter (fade to next)
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Fade:resume"></a>
+    <strong>Fade:resume ()</strong>
+    </dt>
+    <dd>
+    Resume (fade to previous)
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Fade:draw"></a>
+    <strong>Fade:draw ()</strong>
+    </dt>
+    <dd>
+    Draw the screenshot and a fade to black on top of it
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Fade:update"></a>
+    <strong>Fade:update (dt)</strong>
+    </dt>
+    <dd>
+    Update the transition
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+         Delta time
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Fields"></a>Fields</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "self.screenshot"></a>
+    <strong>self.screenshot</strong>
+    </dt>
+    <dd>
+    Image data from the screen grabbed immediately upon entering this state
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "self.duration"></a>
+    <strong>self.duration</strong>
+    </dt>
+    <dd>
+    The fade out duration in seconds
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "self.timer"></a>
+    <strong>self.timer</strong>
+    </dt>
+    <dd>
+    Animation timer in seconds
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "self.direction"></a>
+    <strong>self.direction</strong>
+    </dt>
+    <dd>
+    Whether to transition forward or backward
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2019-10-05 16:50:39 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

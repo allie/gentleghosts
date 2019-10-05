@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>game</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Tables">Tables</a></li>
+<li><a href="#Fields">Fields</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/core.autoupdater.html">core.autoupdater</a></li>
+  <li><a href="../classes/core.background.html">core.background</a></li>
+  <li><a href="../classes/core.config.html">core.config</a></li>
+  <li><a href="../classes/core.gameobject.html">core.gameobject</a></li>
+  <li><strong>core.inputmanager</strong></li>
+  <li><a href="../classes/core.soundmanager.html">core.soundmanager</a></li>
+  <li><a href="../classes/core.sprite.html">core.sprite</a></li>
+  <li><a href="../classes/hud.health.html">hud.health</a></li>
+  <li><a href="../classes/hud.hud.html">hud.hud</a></li>
+  <li><a href="../classes/item.item.html">item.item</a></li>
+  <li><a href="../classes/item.items.redpotion.html">item.items.redpotion</a></li>
+  <li><a href="../classes/level.level.html">level.level</a></li>
+  <li><a href="../classes/level.levels.test.html">level.levels.test</a></li>
+  <li><a href="../classes/player.parts.head.html">player.parts.head</a></li>
+  <li><a href="../classes/player.parts.heads.test.html">player.parts.heads.test</a></li>
+  <li><a href="../classes/player.parts.legs.html">player.parts.legs</a></li>
+  <li><a href="../classes/player.parts.legs.test.html">player.parts.legs.test</a></li>
+  <li><a href="../classes/player.parts.torso.html">player.parts.torso</a></li>
+  <li><a href="../classes/player.parts.torsos.test.html">player.parts.torsos.test</a></li>
+  <li><a href="../classes/player.player.html">player.player</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/gamestates.audiomenu.html">gamestates.audiomenu</a></li>
+  <li><a href="../modules/gamestates.controlsmenu.html">gamestates.controlsmenu</a></li>
+  <li><a href="../modules/gamestates.fade.html">gamestates.fade</a></li>
+  <li><a href="../modules/gamestates.mainmenu.html">gamestates.mainmenu</a></li>
+  <li><a href="../modules/gamestates.menu.html">gamestates.menu</a></li>
+  <li><a href="../modules/gamestates.optionsmenu.html">gamestates.optionsmenu</a></li>
+  <li><a href="../modules/gamestates.play.html">gamestates.play</a></li>
+</ul>
+<h2>Scripts</h2>
+<ul class="nowrap">
+  <li><a href="../scripts/conf.html">conf</a></li>
+  <li><a href="../scripts/main.html">main</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>core.inputmanager</code></h1>
+<p>Input handling for gamepads and keyboards</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#InputManager.new">InputManager.new ()</a></td>
+	<td class="summary">Constructor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#InputManager:findGamepads">InputManager:findGamepads ()</a></td>
+	<td class="summary">Find all connected gamepads</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#InputManager:rebind">InputManager:rebind (target, kind, input[, value])</a></td>
+	<td class="summary">Rebind a control; if the chosen input is already bound to
+ something else, that control will become unbound</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#InputManager:wasActivated">InputManager:wasActivated (input)</a></td>
+	<td class="summary">Determine whether the given input was activated between the last tick and now</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#InputManager:wasDeactivated">InputManager:wasDeactivated (input)</a></td>
+	<td class="summary">Determine whether the given input was deactivated between the last tick and now</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#InputManager:update">InputManager:update (dt)</a></td>
+	<td class="summary">Polls the current input state.</td>
+	</tr>
+</table>
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#instance.currentState">instance.currentState</a></td>
+	<td class="summary">The current input state</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.lastState">instance.lastState</a></td>
+	<td class="summary">The input state of the previous tick</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.stack">instance.stack</a></td>
+	<td class="summary">A stack containing the most recently activated inputs in order</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.gamepads">instance.gamepads</a></td>
+	<td class="summary">Collection of all gamepads found on the system</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#instance.triggerDeadzone">instance.triggerDeadzone</a></td>
+	<td class="summary">Trigger deadzone</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.stickDeadzone">instance.stickDeadzone</a></td>
+	<td class="summary">Stick deadzone</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.gamepad">instance.gamepad</a></td>
+	<td class="summary">Currently enabled gamepad</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "InputManager.new"></a>
+    <strong>InputManager.new ()</strong>
+    </dt>
+    <dd>
+    Constructor
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        A new InputManager instance
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "InputManager:findGamepads"></a>
+    <strong>InputManager:findGamepads ()</strong>
+    </dt>
+    <dd>
+    Find all connected gamepads
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "InputManager:rebind"></a>
+    <strong>InputManager:rebind (target, kind, input[, value])</strong>
+    </dt>
+    <dd>
+    Rebind a control; if the chosen input is already bound to
+ something else, that control will become unbound
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">target</span>
+         The control to rebind
+        </li>
+        <li><span class="parameter">kind</span>
+         The kind of input being bound
+        </li>
+        <li><span class="parameter">input</span>
+         The input to bind to
+        </li>
+        <li><span class="parameter">value</span>
+         The value of an axis input (positive or negative)
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "InputManager:wasActivated"></a>
+    <strong>InputManager:wasActivated (input)</strong>
+    </dt>
+    <dd>
+    Determine whether the given input was activated between the last tick and now
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">input</span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        True if activated, false if not
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "InputManager:wasDeactivated"></a>
+    <strong>InputManager:wasDeactivated (input)</strong>
+    </dt>
+    <dd>
+    Determine whether the given input was deactivated between the last tick and now
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">input</span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        True if deactivated, false if not
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "InputManager:update"></a>
+    <strong>InputManager:update (dt)</strong>
+    </dt>
+    <dd>
+    Polls the current input state.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+        Copy previous state and clear current state
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        The current input state
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "instance.currentState"></a>
+    <strong>instance.currentState</strong>
+    </dt>
+    <dd>
+    The current input state
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">a</span>
+         A button
+        </li>
+        <li><span class="parameter">b</span>
+         B button
+        </li>
+        <li><span class="parameter">x</span>
+         X button
+        </li>
+        <li><span class="parameter">y</span>
+         Y button
+        </li>
+        <li><span class="parameter">left</span>
+         Left movement control
+        </li>
+        <li><span class="parameter">right</span>
+         Right movement control
+        </li>
+        <li><span class="parameter">up</span>
+         Up movement control
+        </li>
+        <li><span class="parameter">down</span>
+         Down movement control
+        </li>
+        <li><span class="parameter">back</span>
+         Back button
+        </li>
+        <li><span class="parameter">start</span>
+         Start button
+        </li>
+        <li><span class="parameter">lb</span>
+         Left shoulder button
+        </li>
+        <li><span class="parameter">rb</span>
+         Right shoulder button
+        </li>
+        <li><span class="parameter">lt</span>
+         Left trigger
+        </li>
+        <li><span class="parameter">rt</span>
+         Right trigger
+        </li>
+        <li><span class="parameter">ls</span>
+         Left stick button
+        </li>
+        <li><span class="parameter">rs</span>
+         Right stick button
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.lastState"></a>
+    <strong>instance.lastState</strong>
+    </dt>
+    <dd>
+    The input state of the previous tick
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">a</span>
+         A button
+        </li>
+        <li><span class="parameter">b</span>
+         B button
+        </li>
+        <li><span class="parameter">x</span>
+         X button
+        </li>
+        <li><span class="parameter">y</span>
+         Y button
+        </li>
+        <li><span class="parameter">left</span>
+         Left movement control
+        </li>
+        <li><span class="parameter">right</span>
+         Right movement control
+        </li>
+        <li><span class="parameter">up</span>
+         Up movement control
+        </li>
+        <li><span class="parameter">down</span>
+         Down movement control
+        </li>
+        <li><span class="parameter">back</span>
+         Back button
+        </li>
+        <li><span class="parameter">start</span>
+         Start button
+        </li>
+        <li><span class="parameter">lb</span>
+         Left shoulder button
+        </li>
+        <li><span class="parameter">rb</span>
+         Right shoulder button
+        </li>
+        <li><span class="parameter">lt</span>
+         Left trigger
+        </li>
+        <li><span class="parameter">rt</span>
+         Right trigger
+        </li>
+        <li><span class="parameter">ls</span>
+         Left stick button
+        </li>
+        <li><span class="parameter">rs</span>
+         Right stick button
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.stack"></a>
+    <strong>instance.stack</strong>
+    </dt>
+    <dd>
+    A stack containing the most recently activated inputs in order
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.gamepads"></a>
+    <strong>instance.gamepads</strong>
+    </dt>
+    <dd>
+    Collection of all gamepads found on the system
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Fields"></a>Fields</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "instance.triggerDeadzone"></a>
+    <strong>instance.triggerDeadzone</strong>
+    </dt>
+    <dd>
+    Trigger deadzone
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.stickDeadzone"></a>
+    <strong>instance.stickDeadzone</strong>
+    </dt>
+    <dd>
+    Stick deadzone
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.gamepad"></a>
+    <strong>instance.gamepad</strong>
+    </dt>
+    <dd>
+    Currently enabled gamepad
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2019-10-05 16:50:39 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

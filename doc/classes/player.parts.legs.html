@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>game</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Tables">Tables</a></li>
+<li><a href="#Fields">Fields</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/core.autoupdater.html">core.autoupdater</a></li>
+  <li><a href="../classes/core.background.html">core.background</a></li>
+  <li><a href="../classes/core.config.html">core.config</a></li>
+  <li><a href="../classes/core.gameobject.html">core.gameobject</a></li>
+  <li><a href="../classes/core.inputmanager.html">core.inputmanager</a></li>
+  <li><a href="../classes/core.soundmanager.html">core.soundmanager</a></li>
+  <li><a href="../classes/core.sprite.html">core.sprite</a></li>
+  <li><a href="../classes/hud.health.html">hud.health</a></li>
+  <li><a href="../classes/hud.hud.html">hud.hud</a></li>
+  <li><a href="../classes/item.item.html">item.item</a></li>
+  <li><a href="../classes/item.items.redpotion.html">item.items.redpotion</a></li>
+  <li><a href="../classes/level.level.html">level.level</a></li>
+  <li><a href="../classes/level.levels.test.html">level.levels.test</a></li>
+  <li><a href="../classes/player.parts.head.html">player.parts.head</a></li>
+  <li><a href="../classes/player.parts.heads.test.html">player.parts.heads.test</a></li>
+  <li><strong>player.parts.legs</strong></li>
+  <li><a href="../classes/player.parts.legs.test.html">player.parts.legs.test</a></li>
+  <li><a href="../classes/player.parts.torso.html">player.parts.torso</a></li>
+  <li><a href="../classes/player.parts.torsos.test.html">player.parts.torsos.test</a></li>
+  <li><a href="../classes/player.player.html">player.player</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/gamestates.audiomenu.html">gamestates.audiomenu</a></li>
+  <li><a href="../modules/gamestates.controlsmenu.html">gamestates.controlsmenu</a></li>
+  <li><a href="../modules/gamestates.fade.html">gamestates.fade</a></li>
+  <li><a href="../modules/gamestates.mainmenu.html">gamestates.mainmenu</a></li>
+  <li><a href="../modules/gamestates.menu.html">gamestates.menu</a></li>
+  <li><a href="../modules/gamestates.optionsmenu.html">gamestates.optionsmenu</a></li>
+  <li><a href="../modules/gamestates.play.html">gamestates.play</a></li>
+</ul>
+<h2>Scripts</h2>
+<ul class="nowrap">
+  <li><a href="../scripts/conf.html">conf</a></li>
+  <li><a href="../scripts/main.html">main</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>player.parts.legs</code></h1>
+<p>Base class for leg parts</p>
+<p>
+
+</p>
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/player.player.html#">player.player</a>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Legs.new">Legs.new ()</a></td>
+	<td class="summary">Constructor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Legs:setSprite">Legs:setSprite (sprite)</a></td>
+	<td class="summary">Set the sprite for this part</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Legs:update">Legs:update (dt)</a></td>
+	<td class="summary">Update the sprite's animation</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Legs:draw">Legs:draw ()</a></td>
+	<td class="summary">Draw the legs on the Player canvas</td>
+	</tr>
+</table>
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#instance.size">instance.size</a></td>
+	<td class="summary">The size of this part</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.position">instance.position</a></td>
+	<td class="summary">The position of this part, relative to its bounding box.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.torsoAttachment">instance.torsoAttachment</a></td>
+	<td class="summary">Attachment point for the torso part relative to the top left of the legs' bounding box</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#instance.sprite">instance.sprite</a></td>
+	<td class="summary">The graphic to render for the legs</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "Legs.new"></a>
+    <strong>Legs.new ()</strong>
+    </dt>
+    <dd>
+    Constructor
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        A new Legs instance
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Legs:setSprite"></a>
+    <strong>Legs:setSprite (sprite)</strong>
+    </dt>
+    <dd>
+    Set the sprite for this part
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">sprite</span>
+         A Sprite object
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/core.sprite.html#">core.sprite</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "Legs:update"></a>
+    <strong>Legs:update (dt)</strong>
+    </dt>
+    <dd>
+    Update the sprite's animation
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+         Delta time
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Legs:draw"></a>
+    <strong>Legs:draw ()</strong>
+    </dt>
+    <dd>
+    Draw the legs on the Player canvas
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "instance.size"></a>
+    <strong>instance.size</strong>
+    </dt>
+    <dd>
+    The size of this part
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">w</span>
+         Width
+        </li>
+        <li><span class="parameter">h</span>
+         Height
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.position"></a>
+    <strong>instance.position</strong>
+    </dt>
+    <dd>
+    The position of this part, relative to its bounding box.  This
+ value is calculated in the Player class after all three body parts
+ have been loaded.
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+         X coordinate
+        </li>
+        <li><span class="parameter">y</span>
+         Y coordinate
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.torsoAttachment"></a>
+    <strong>instance.torsoAttachment</strong>
+    </dt>
+    <dd>
+    Attachment point for the torso part relative to the top left of the legs' bounding box
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+         X coordinate
+        </li>
+        <li><span class="parameter">y</span>
+         Y coordinate
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Fields"></a>Fields</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "instance.sprite"></a>
+    <strong>instance.sprite</strong>
+    </dt>
+    <dd>
+    The graphic to render for the legs
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2019-10-05 16:50:39 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

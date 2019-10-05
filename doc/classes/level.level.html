@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>game</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Tables">Tables</a></li>
+<li><a href="#Fields">Fields</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/core.autoupdater.html">core.autoupdater</a></li>
+  <li><a href="../classes/core.background.html">core.background</a></li>
+  <li><a href="../classes/core.config.html">core.config</a></li>
+  <li><a href="../classes/core.gameobject.html">core.gameobject</a></li>
+  <li><a href="../classes/core.inputmanager.html">core.inputmanager</a></li>
+  <li><a href="../classes/core.soundmanager.html">core.soundmanager</a></li>
+  <li><a href="../classes/core.sprite.html">core.sprite</a></li>
+  <li><a href="../classes/hud.health.html">hud.health</a></li>
+  <li><a href="../classes/hud.hud.html">hud.hud</a></li>
+  <li><a href="../classes/item.item.html">item.item</a></li>
+  <li><a href="../classes/item.items.redpotion.html">item.items.redpotion</a></li>
+  <li><strong>level.level</strong></li>
+  <li><a href="../classes/level.levels.test.html">level.levels.test</a></li>
+  <li><a href="../classes/player.parts.head.html">player.parts.head</a></li>
+  <li><a href="../classes/player.parts.heads.test.html">player.parts.heads.test</a></li>
+  <li><a href="../classes/player.parts.legs.html">player.parts.legs</a></li>
+  <li><a href="../classes/player.parts.legs.test.html">player.parts.legs.test</a></li>
+  <li><a href="../classes/player.parts.torso.html">player.parts.torso</a></li>
+  <li><a href="../classes/player.parts.torsos.test.html">player.parts.torsos.test</a></li>
+  <li><a href="../classes/player.player.html">player.player</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/gamestates.audiomenu.html">gamestates.audiomenu</a></li>
+  <li><a href="../modules/gamestates.controlsmenu.html">gamestates.controlsmenu</a></li>
+  <li><a href="../modules/gamestates.fade.html">gamestates.fade</a></li>
+  <li><a href="../modules/gamestates.mainmenu.html">gamestates.mainmenu</a></li>
+  <li><a href="../modules/gamestates.menu.html">gamestates.menu</a></li>
+  <li><a href="../modules/gamestates.optionsmenu.html">gamestates.optionsmenu</a></li>
+  <li><a href="../modules/gamestates.play.html">gamestates.play</a></li>
+</ul>
+<h2>Scripts</h2>
+<ul class="nowrap">
+  <li><a href="../scripts/conf.html">conf</a></li>
+  <li><a href="../scripts/main.html">main</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>level.level</code></h1>
+<p>Base class for levels</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Level.new">Level.new (mapFile)</a></td>
+	<td class="summary">Constructor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Level:update">Level:update (dt)</a></td>
+	<td class="summary">Update the game world</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Level:draw">Level:draw ()</a></td>
+	<td class="summary">Draw the level on the screen</td>
+	</tr>
+</table>
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#instance.bgOffset">instance.bgOffset</a></td>
+	<td class="summary">Background offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.bgColour">instance.bgColour</a></td>
+	<td class="summary">Background colour of the level</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.objects">instance.objects</a></td>
+	<td class="summary">Game objects affected by gravity</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.itemMap">instance.itemMap</a></td>
+	<td class="summary">Item to class mapping</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#instance.bg">instance.bg</a></td>
+	<td class="summary">Background image</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.bg">instance.bg</a></td>
+	<td class="summary">Background object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.world">instance.world</a></td>
+	<td class="summary">bump world</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.gravity">instance.gravity</a></td>
+	<td class="summary">Gravity of the world in units/s^2</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.map">instance.map</a></td>
+	<td class="summary">Tiled map</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#instance.camera">instance.camera</a></td>
+	<td class="summary">Camera</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "Level.new"></a>
+    <strong>Level.new (mapFile)</strong>
+    </dt>
+    <dd>
+    Constructor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">mapFile</span>
+         Path to the Tiled map file
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        A new Level instance
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Level:update"></a>
+    <strong>Level:update (dt)</strong>
+    </dt>
+    <dd>
+    Update the game world
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+         Delta time
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Level:draw"></a>
+    <strong>Level:draw ()</strong>
+    </dt>
+    <dd>
+    Draw the level on the screen
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "instance.bgOffset"></a>
+    <strong>instance.bgOffset</strong>
+    </dt>
+    <dd>
+    Background offset
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+         X offset
+        </li>
+        <li><span class="parameter">y</span>
+         Y offset
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.bgColour"></a>
+    <strong>instance.bgColour</strong>
+    </dt>
+    <dd>
+    Background colour of the level
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">r</span>
+
+
+
+        </li>
+        <li><span class="parameter">g</span>
+
+
+
+        </li>
+        <li><span class="parameter">b</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.objects"></a>
+    <strong>instance.objects</strong>
+    </dt>
+    <dd>
+    Game objects affected by gravity
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.itemMap"></a>
+    <strong>instance.itemMap</strong>
+    </dt>
+    <dd>
+    Item to class mapping
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">[redpotion]</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Fields"></a>Fields</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "instance.bg"></a>
+    <strong>instance.bg</strong>
+    </dt>
+    <dd>
+    Background image
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.bg"></a>
+    <strong>instance.bg</strong>
+    </dt>
+    <dd>
+    Background object
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/core.background.html#">core.background</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "instance.world"></a>
+    <strong>instance.world</strong>
+    </dt>
+    <dd>
+    bump world
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.gravity"></a>
+    <strong>instance.gravity</strong>
+    </dt>
+    <dd>
+    Gravity of the world in units/s^2
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.map"></a>
+    <strong>instance.map</strong>
+    </dt>
+    <dd>
+    Tiled map
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "instance.camera"></a>
+    <strong>instance.camera</strong>
+    </dt>
+    <dd>
+    Camera
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2019-10-05 16:50:39 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
