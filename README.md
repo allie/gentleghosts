@@ -1,4 +1,4 @@
-# Gentle Ghosts Jam entry (name TBD)
+# Gentle Ghost Jam entry (name TBD)
 
 ## Building
 First, ensure [LÖVE](https://love2d.org) is installed on your system. For automatic

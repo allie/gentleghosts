@@ -13,7 +13,7 @@ function MainMenu:init()
 
 	self.titleSize = 128
 	self.titleFont = love.graphics.newFont('assets/fonts/KiwiSoda.ttf', self.titleSize)
-	self.title = 'GameOff'
+	self.title = 'Gentle Ghost'
 
 	self.menuItems = {
 		'Play',
