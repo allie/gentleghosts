@@ -69,7 +69,7 @@ function Fade:draw()
 
 	if self.screenshot ~= nil then
 		love.graphics.setColor(1, 1, 1)
-		love.graphics.draw(self.screenshot, 0, 0, 0, 0.5, 0.5)
+		love.graphics.draw(self.screenshot, 0, 0, 0)
 	end
 
 	love.graphics.setColor(0, 0, 0, self.timer / self.duration)

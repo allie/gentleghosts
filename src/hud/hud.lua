@@ -11,6 +11,9 @@ Hud.__index = Hud
 function Hud.new()
 	local instance = {}
 
+	--- UI scale
+	instance.scale = 2
+
 	--- Canvas to draw the HUD to (in order to scale 2x later)
 	instance.canvas = love.graphics.newCanvas(love.graphics.getWidth(), love.graphics.getHeight())
 
@@ -28,7 +31,7 @@ function Hud:draw()
 	self.health:draw(10, 10, 2)
 	love.graphics.setCanvas()
 
-	love.graphics.draw(self.canvas, 0, 0, 0, 2, 2)
+	love.graphics.draw(self.canvas, 0, 0, 0, self.scale, self.scale)
 end
 
 return Hud

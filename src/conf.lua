@@ -18,7 +18,7 @@ function love.conf(t)
 	t.window.depth = nil
 	t.window.stencil = nil
 	t.window.display = 1
-	t.window.highdpi = true
+	t.window.highdpi = false
 	t.window.x = nil
 	t.window.y = nil
 	t.modules.audio = true
