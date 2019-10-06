@@ -11,7 +11,7 @@ Play.__index = menu
 
 function Play:init()
 	Globals.player = Player.new()
-	Globals.player:setSprite(Sprite.new('assets/images/player/torsos/test.png', 24, 4, 0.3))
+	Globals.player:setSprite(Sprite.new('assets/images/player/spooky.png', 16, 4, 0.3))
 
 	self.level = TestLevel.new()
 
