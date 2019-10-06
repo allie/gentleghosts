@@ -67,6 +67,7 @@ function love.load()
 	love.graphics.setDefaultFilter('nearest', 'nearest', 1)
 
 	Globals.config = Config.new('settings.lua')
+	Globals.config:load()
 
 	Globals.gamestates = {
 		fade = FadeState,

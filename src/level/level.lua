@@ -109,6 +109,18 @@ function Level:update(dt)
 		obj:update(dt)
 	end
 
+	if Globals.input:wasActivated('b') then
+		local items, len = self.world:queryRect(Globals.player:getActionRect())
+		for i, item in ipairs(items) do
+			if item ~= Globals.player then
+				if item.type == 'npc' then
+					item:talk()
+					break
+				end
+			end
+		end
+	end
+
 	-- Update the positions of game objects accounting for gravity
 	local gdiff = self.gravity * dt
 

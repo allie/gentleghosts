@@ -12,6 +12,8 @@ setmetatable(Player, {__index = Actor})
 function Player.new()
 	local instance = Actor.new()
 
+	instance.type = 'player'
+
 	--- The player's health state
 	-- @field total Total health
 	-- @field current Current health
@@ -74,6 +76,10 @@ end
 -- @param camera The level's camera
 function Player:draw(camera)
 	Actor.draw(self, camera)
+
+	camera:attach()
+	love.graphics.rectangle('line', self:getActionRect())
+	camera:detach()
 end
 
 return Player
