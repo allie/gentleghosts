@@ -1,11 +1,12 @@
 OS := $(shell uname)
+
+LOVE := love
+WORKAROUND :=
+
 ifeq ($(OS),Darwin)
 	LOVE := /Applications/love.app/Contents/MacOS/love
 	# A workaround to circumvent the issue mentioned here: https://love2d.org/forums/viewtopic.php?t=85784&p=223279
 	WORKAROUND := @rm -r ~/Library/Saved\ Application\ State/org.love2d.love.savedState 2>/dev/null
-else
-	LOVE := love
-	WORKAROUND := 
 endif
 
 default: build run
@@ -25,5 +26,5 @@ doc:
 	@ldoc -d doc -p game -f markdown src
 
 run:
-	$(WORKAROUND) || true
+	$(WORKAROUND)
 	$(LOVE) ./game.love
