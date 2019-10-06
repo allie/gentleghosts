@@ -2,7 +2,7 @@
 -- @module gamestates.play
 
 local Sprite = require('core.sprite')
-local Player = require('player.player')
+local Player = require('actor.player')
 local TestLevel = require('level.levels.test')
 local Hud = require('hud.hud')
 
