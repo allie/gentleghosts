@@ -59,20 +59,25 @@ function Level.new(mapFile)
 		bottom = instance.map.height * instance.map.tileheight - love.graphics.getHeight() / 2 / instance.camera.scale,
 	}
 
-	-- Set spawn point for the player
-	for k, object in pairs(instance.map.objects) do
-		if object.name == 'spawn' then
-			Globals.player.aabb.x = object.x
-			Globals.player.aabb.y = object.y
-			break
-		end
-	end
-
-	-- Add player to the game objects collection
-	table.insert(instance.objects, Globals.player)
-
 	-- Load items into the world
 	for k, object in pairs(instance.map.objects) do
+		if object.name == 'spawn' then
+			Globals.player:setPos(object.x, object.y)
+
+			-- Add player to the game objects collection
+			table.insert(instance.objects, Globals.player)
+		end
+
+		if object.type == 'npc' then
+			local npc = require('actor.npc.' .. object.name).new()
+			npc:setPos(object.x, object.y)
+
+			table.insert(
+				instance.objects,
+				npc
+			)
+		end
+
 		if object.type == 'item' then
 			table.insert(
 				instance.objects,
@@ -102,6 +107,27 @@ function Level:update(dt)
 	-- Update all game objects
 	for i, obj in ipairs(self.objects) do
 		obj:update(dt)
+	end
+
+	if Globals.input:wasActivated('b') then
+		local items, len = self.world:queryRect(Globals.player:getActionRect())
+		for i, item in ipairs(items) do
+			if item ~= Globals.player then
+				if item.type == 'npc' then
+					item:talk()
+					break
+				elseif item.type == 'item' then
+					Globals.player.heldItem = item
+					self.world:remove(item)
+					for i, obj in ipairs(self.objects) do
+						if obj == item then
+							table.remove(self.objects, i)
+						end
+					end
+					break
+				end
+			end
+		end
 	end
 
 	-- Update the positions of game objects accounting for gravity

@@ -9,6 +9,8 @@ Config.__index = Config
 function Config.new()
 	local instance = {}
 
+	instance = love.filesystem.load('assets/data/defaultsettings.lua')()
+
 	--- The name of the file containing user settings
 	instance.file = 'settings'
 
@@ -24,9 +26,7 @@ function Config:load()
 	local settings = {}
 	local didLoad = false
 
-	if not love.filesystem.getInfo(self.file) then
-		settings = love.filesystem.load('assets/data/defaultsettings.lua')()
-	else
+	if love.filesystem.getInfo(self.file) then
 		settings = bitser.loads(love.filesystem.read(self.file))
 		didLoad = true
 	end

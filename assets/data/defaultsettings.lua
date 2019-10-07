@@ -3,6 +3,8 @@
 return {
 	masterVolume = 1,
 
+	dialogFontSize = 48,
+
 	keyBindings = {
 		a = {'key', 'z'},
 		b = {'key', 'x'},

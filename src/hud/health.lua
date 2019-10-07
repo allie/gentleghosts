@@ -39,7 +39,7 @@ function Health:draw(x, y, ticks)
 		love.graphics.draw(self.sprite, cx, cy)
 
 		ticksLeft = ticksLeft - 1
-		drawnOnRow = drawnOnRow +1
+		drawnOnRow = drawnOnRow + 1
 		cx = cx + self.sprite:getWidth() + 1
 	end
 end

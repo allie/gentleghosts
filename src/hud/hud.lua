@@ -28,7 +28,16 @@ end
 --- Draw the HUD
 function Hud:draw()
 	love.graphics.setCanvas(self.canvas)
-	self.health:draw(10, 10, 2)
+	self.health:draw(10, 10, Globals.player.health.current)
+
+	if Globals.player.heldItem ~= nil then
+		love.graphics.draw(
+			Globals.player.heldItem.sprite,
+			(self.canvas:getWidth() / 2) - 10 - Globals.player.heldItem.sprite:getWidth(),
+			10
+		)
+	end
+
 	love.graphics.setCanvas()
 
 	love.graphics.draw(self.canvas, 0, 0, 0, self.scale, self.scale)

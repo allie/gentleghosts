@@ -1,22 +1,18 @@
 --- The main character of the game
 -- @classmod player.player
 
-local Gameobject = require('core.gameobject')
+local Actor = require('actor.actor')
 
 local Player = {}
 Player.__index = Player
-setmetatable(Player, {__index = Gameobject})
+setmetatable(Player, {__index = Actor})
 
 --- Constructor
 -- @return A new Player instance
 function Player.new()
-	local instance = Gameobject.new()
+	local instance = Actor.new()
 
-	--- The graphic to render for the player
-	instance.sprite = nil
-
-	--- The player's current animation state
-	instance.state = 'idle'
+	instance.type = 'player'
 
 	--- The player's health state
 	-- @field total Total health
@@ -35,25 +31,19 @@ function Player.new()
 		['right'] = true
 	}
 
+	instance.heldItem = nil
+
 	setmetatable(instance, Player)
 	return instance
-end
-
---- Set the sprite for the player and update the AABB
--- @param sprite A sprite object
--- @see core.sprite
-function Player:setSprite(sprite)
-	self.sprite = sprite
-	self.aabb.w = sprite.fw
-	self.aabb.h = sprite.fh
-	self.sprite:playAnimation()
 end
 
 --- Update the player (handle input, etc.)
 -- @param dt Delta time
 -- @todo Add max velocity
 function Player:update(dt)
-	-- Recalculate the player's x velocity based on pressed keys
+	Actor.update(self, dt)
+
+	-- Recalculate the actor's x velocity based on pressed keys
 	-- (only if a jump is not occurring)
 	if self.velocity.y == 0 then
 		self.velocity.x = 0
@@ -87,19 +77,7 @@ end
 -- @todo Incorporate camera coords
 -- @param camera The level's camera
 function Player:draw(camera)
-	if self.sprite == nil then
-		return
-	end
-
-	camera:attach()
-
-	if self.facing == -1 then
-		self.sprite:draw(self.aabb.x, self.aabb.y, 0, self.facing, 1, self.aabb.w, 0)
-	else
-		self.sprite:draw(self.aabb.x, self.aabb.y)
-	end
-
-	camera:detach()
+	Actor.draw(self, camera)
 end
 
 return Player
