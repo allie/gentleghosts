@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="64" height="24" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="7">
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="64" height="24" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="8">
  <tileset firstgid="1" name="tileset" tilewidth="16" tileheight="16" tilecount="144" columns="12">
   <image source="tileset.png" width="192" height="192"/>
   <tile id="0">
@@ -756,7 +756,11 @@
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="9" name="Items"/>
+ <objectgroup id="9" name="Items">
+  <object id="7" name="redpotion" type="item" x="415" y="310">
+   <point/>
+  </object>
+ </objectgroup>
  <objectgroup id="10" name="NPCs">
   <object id="5" name="test" type="npc" x="624" y="300">
    <point/>

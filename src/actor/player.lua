@@ -31,6 +31,8 @@ function Player.new()
 		['right'] = true
 	}
 
+	instance.heldItem = nil
+
 	setmetatable(instance, Player)
 	return instance
 end
@@ -76,10 +78,6 @@ end
 -- @param camera The level's camera
 function Player:draw(camera)
 	Actor.draw(self, camera)
-
-	camera:attach()
-	love.graphics.rectangle('line', self:getActionRect())
-	camera:detach()
 end
 
 return Player

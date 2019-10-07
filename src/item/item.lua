@@ -15,6 +15,8 @@ setmetatable(Item, {__index = Gameobject})
 function Item.new(x, y, sprite)
 	local instance = Gameobject.new()
 
+	instance.type = 'item'
+
 	--- The sprite to render for this item
 	instance.sprite = sprite
 

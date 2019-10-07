@@ -116,6 +116,15 @@ function Level:update(dt)
 				if item.type == 'npc' then
 					item:talk()
 					break
+				elseif item.type == 'item' then
+					Globals.player.heldItem = item
+					self.world:remove(item)
+					for i, obj in ipairs(self.objects) do
+						if obj == item then
+							table.remove(self.objects, i)
+						end
+					end
+					break
 				end
 			end
 		end

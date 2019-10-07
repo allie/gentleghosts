@@ -9,7 +9,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 11,
-  nextobjectid = 7,
+  nextobjectid = 8,
   properties = {},
   tilesets = {
     {
@@ -981,7 +981,21 @@ return {
       offsety = 0,
       draworder = "topdown",
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 7,
+          name = "redpotion",
+          type = "item",
+          shape = "point",
+          x = 415,
+          y = 310,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
     },
     {
       type = "objectgroup",
