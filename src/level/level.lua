@@ -1,8 +1,6 @@
 --- Base class for levels
 -- @classmod level.level
 
-local RedPotion = require('item.items.redpotion')
-
 local Level = {}
 Level.__index = Level
 
@@ -38,11 +36,6 @@ function Level.new(mapFile)
 
 	--- Tiled map
 	instance.map = sti(mapFile, {'bump'})
-
-	--- Item to class mapping
-	instance.itemMap = {
-		['redpotion'] = RedPotion
-	}
 
 	--- Camera
 	instance.camera = Camera.new(
@@ -81,7 +74,8 @@ function Level.new(mapFile)
 		if object.type == 'item' then
 			table.insert(
 				instance.objects,
-				instance.itemMap[object.name].new(object.x, object.y)
+				require('item.items.' .. object.name).new(object.x, object.y)
+
 			)
 		end
 	end
