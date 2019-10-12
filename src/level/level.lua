@@ -117,8 +117,14 @@ function Level:update(dt)
 					item:talk()
 					break
 				elseif item.type == 'item' then
-					Globals.player.heldItem = item
+					if item.id ~= nil then
+						Globals.player.heldItems[item.id] = item
+					else
+						table.insert(Globals.player.heldItems, item)
+					end
+
 					self.world:remove(item)
+
 					for i, obj in ipairs(self.objects) do
 						if obj == item then
 							table.remove(self.objects, i)

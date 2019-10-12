@@ -31,10 +31,24 @@ function Player.new()
 		['right'] = true
 	}
 
-	instance.heldItem = nil
+	instance.heldItems = {}
 
 	setmetatable(instance, Player)
 	return instance
+end
+
+function Player:getItem(name)
+	for i, item in ipairs(self.heldItems) do
+		if item.name == name then
+			return i
+		end
+	end
+
+	return nil
+end
+
+function Player:hasItem(name)
+	return self:getItem(name) ~= nil
 end
 
 --- Update the player (handle input, etc.)

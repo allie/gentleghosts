@@ -13,7 +13,12 @@ setmetatable(RedPotion, {__index = Item})
 -- @param x X coordinate
 -- @param y Y coordinate
 function RedPotion.new(x, y)
-	local instance = Item.new(x, y, love.graphics.newImage('assets/images/items/redpotion.png'))
+	local instance = Item.new(
+		x,
+		y,
+		'redpotion',
+		love.graphics.newImage('assets/images/items/redpotion.png')
+	)
 
 	setmetatable(instance, RedPotion)
 	return instance

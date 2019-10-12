@@ -20,4 +20,23 @@ function TestNpc.new()
 	return instance
 end
 
+function TestNpc:getDialog()
+	if Globals.player:hasItem('redpotion') then
+		return {"Hey thanks for the potion!"}
+	end
+
+	return Npc.getDialog(self)
+end
+
+function TestNpc:talkEnd()
+	local potionIndex = Globals.player:getItem('redpotion')
+	if potionIndex ~= nil then
+		table.remove(Globals.player.heldItems, potionIndex)
+		Gamestate.pop()
+		return
+	end
+
+	Npc.talkEnd(self)
+end
+
 return TestNpc

@@ -12,13 +12,14 @@ setmetatable(Item, {__index = Gameobject})
 -- @param y Y coordinate
 -- @param sprite The sprite for this item
 -- @return A new Item instance
-function Item.new(x, y, sprite)
+function Item.new(x, y, name, sprite)
 	local instance = Gameobject.new()
 
 	instance.type = 'item'
 
 	--- The sprite to render for this item
 	instance.sprite = sprite
+	instance.name = name
 
 	-- Set the weight to 0 so it stays in place
 	instance.weight = 0

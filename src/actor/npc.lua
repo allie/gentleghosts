@@ -20,10 +20,22 @@ function Npc.new()
 	return instance
 end
 
+function Npc:getDialog()
+	return self.dialogs[self.currentDialog]
+end
+
 function Npc:talk()
-	local dialog = self.dialogs[self.currentDialog]
+	local dialog = self:getDialog()
 	if dialog ~= nil then
-		Talkies.say(self.name, dialog)
+		Talkies.say(self.name, dialog, {
+			oncomplete = function (dialog) self:talkEnd(dialog) end
+		})
+	end
+end
+
+function Npc:talkEnd(dialog)
+	if self.currentDialog < #self.dialogs then
+		self.currentDialog = self.currentDialog + 1
 	end
 end
 
