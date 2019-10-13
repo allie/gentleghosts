@@ -21,7 +21,7 @@ function MainMenu:init()
 	}
 
 	self.itemStates = {
-		['Play'] = Globals.gamestates.play,
+		['Play'] = Globals.gamestates.overworld,
 		['Options'] = Globals.gamestates.optionsMenu
 	}
 

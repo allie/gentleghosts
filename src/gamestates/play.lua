@@ -9,7 +9,7 @@ local TestLevel = require('level.levels.test')
 local Hud = require('hud.hud')
 
 local Play = {}
-Play.__index = menu
+Play.__index = Play
 
 function Play:init()
 	Globals.player = Player.new()
@@ -22,6 +22,10 @@ function Play:init()
 	self.level = TestLevel.new()
 
 	self.hud = Hud.new()
+end
+
+function Play:setLevel(level)
+	self.level = level
 end
 
 function Play:draw()

@@ -189,4 +189,8 @@ function Level:draw()
 	end
 end
 
+function Level.unlocked()
+	return true
+end
+
 return Level

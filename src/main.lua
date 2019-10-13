@@ -20,6 +20,7 @@ local MenuState = require('gamestates.mainmenu')
 local OptionsState = require('gamestates.optionsmenu')
 local AudioState = require('gamestates.audiomenu')
 local ControlsState = require('gamestates.controlsmenu')
+local OverworldState = require('gamestates.overworld')
 local PlayState = require('gamestates.play')
 
 --- Table holding anything that should be easily accessible anywhere within the game
@@ -29,11 +30,11 @@ Globals = {}
 -- do that manually elsewhere
 function love.run()
 	if love.load then love.load(love.arg.parseGameArguments(arg), arg) end
- 
+
 	if love.timer then love.timer.step() end
- 
+
 	local dt = 0
- 
+
 	return function()
 		if love.event then
 			love.event.pump()
@@ -46,18 +47,18 @@ function love.run()
 				love.handlers[name](a,b,c,d,e,f)
 			end
 		end
- 
+
 		if love.timer then dt = love.timer.step() end
- 
+
 		if love.update then love.update(dt) end
- 
+
 		if love.graphics and love.graphics.isActive() then
-			love.graphics.origin() 
+			love.graphics.origin()
 			if love.draw then love.draw() end
- 
+
 			love.graphics.present()
 		end
- 
+
 		if love.timer then love.timer.sleep(0.001) end
 	end
 end
@@ -75,6 +76,7 @@ function love.load()
 		optionsMenu = OptionsState,
 		audioMenu = AudioState,
 		controlsMenu = ControlsState,
+		overworld = OverworldState,
 		play = PlayState
 	}
 
