@@ -8,7 +8,7 @@ setmetatable(TestNpc, {__index = Npc})
 
 function TestNpc.new()
 	local instance = Npc.new()
-	instance:setSprite(Sprite.new('assets/images/player/legs/test.png', 24, 4, 0.3))
+	instance:setSprite(Sprite.new('assets/images/items/meat.png', 24, 4, 0.3))
 
 	instance.name = 'Test NPC'
 	instance.dialogs = {

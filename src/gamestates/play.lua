@@ -19,13 +19,13 @@ function Play:init()
 	self.dialogFont = love.graphics.newFont('assets/fonts/KiwiSoda.ttf', Globals.config.dialogFontSize)
 	Talkies.font = self.dialogFont
 
-	self.level = TestLevel.new()
+	self.level = self.levelClass.new()
 
 	self.hud = Hud.new()
 end
 
-function Play:setLevel(level)
-	self.level = level
+function Play:setLevel(levelClass)
+	self.levelClass = levelClass
 end
 
 function Play:draw()

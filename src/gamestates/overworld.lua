@@ -40,6 +40,7 @@ end
 
 function Overworld:draw()
 	love.graphics.clear()
+	love.graphics.setColor(255, 255, 255)
 	self.map:draw()
 
 	-- Calculate offset for map
@@ -61,22 +62,38 @@ function Overworld:update(dt)
 	for i, key in ipairs(Globals.input.stack) do
 		if key == 'right' and self.cursorIndex < #self.levels then
 			newIndex = self.cursorIndex + 1
+			break
 		elseif key == 'left' and self.cursorIndex > 1 then
 			newIndex = self.cursorIndex - 1
+			break
 		elseif key == 'a' then
-			Globals.gamestates.play:setLevel(self.levels[self.cursorIndex].levelClass.new())
+			Globals.gamestates.play:setLevel(self.levels[self.cursorIndex].levelClass)
 			Globals.gamestates.fade:setDuration(0.5)
 			Globals.gamestates.fade:setNextState(Globals.gamestates.play)
 			Gamestate.push(Globals.gamestates.fade)
+			break
 		end
 	end
 
 	if newIndex ~= nil then
 		local newLevel = self.levels[newIndex]
 		if newLevel ~= nil and newLevel.levelClass.unlocked() then
-
+			self.cursorIndex = newIndex
 		end
 	end
+
+	local level = self.levels[self.cursorIndex]
+	-- Update the position of the camera to follow the character
+	self.camera:lookAt(
+		level.x,
+		level.y
+	)
+
+	-- Clamp the camera within the bounds of the level
+	self.camera.x = math.max(self.cameraBounds.left, self.camera.x)
+	self.camera.x = math.min(self.cameraBounds.right, self.camera.x)
+	self.camera.y = math.max(self.cameraBounds.top, self.camera.y)
+	self.camera.y = math.min(self.cameraBounds.bottom, self.camera.y)
 end
 
 return Overworld
