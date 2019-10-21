@@ -26,7 +26,7 @@ function Overworld:init()
 	self.camera = Camera.new(
 		level.x,
 		level.y,
-		3
+		2
 	)
 
 	-- The bounds of the camera
@@ -68,6 +68,7 @@ function Overworld:update(dt)
 			break
 		elseif key == 'a' then
 			Globals.gamestates.play:setLevel(self.levels[self.cursorIndex].levelClass)
+			Globals.gamestates.play:init()
 			Globals.gamestates.fade:setDuration(0.5)
 			Globals.gamestates.fade:setNextState(Globals.gamestates.play)
 			Gamestate.push(Globals.gamestates.fade)
