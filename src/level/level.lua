@@ -5,8 +5,9 @@ local Level = {}
 Level.__index = Level
 
 local DRAW_DOORS = true
-local DOOR_WIDTH = 15
+local DOOR_WIDTH = 30
 local DOOR_HEIGHT = 30
+
 local FALL_DAMAGE = 1
 
 --- Constructor
@@ -91,7 +92,7 @@ function Level.new(mapFile)
 				instance.objects,
 				require('item.items.' .. object.name).new(object.x, object.y)
 			)
-		else
+	elseif object.type == 'level' or object.type == 'exit' then
 			table.insert(instance.doors, {
 				type = object.type,
 				name = object.name,
