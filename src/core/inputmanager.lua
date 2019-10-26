@@ -9,6 +9,28 @@ InputManager.__index = InputManager
 function InputManager.new()
 	local instance = {}
 
+	--- Trigger deadzone
+	instance.triggerDeadzone = 0.5
+
+	--- Stick deadzone
+	instance.stickDeadzone = 0.3
+
+	--- Collection of all gamepads found on the system
+	instance.gamepads = {}
+
+	--- Currently enabled gamepad
+	instance.gamepad = nil
+
+	-- Load the SDL controller mapping db
+	love.joystick.loadGamepadMappings('assets/data/gamecontrollerdb.txt')
+
+	setmetatable(instance, InputManager)
+	instance:reset()
+
+	return instance
+end
+
+function InputManager:reset()
 	--- The current input state
 	-- @field a A button
 	-- @field b B button
@@ -26,7 +48,7 @@ function InputManager.new()
 	-- @field rt Right trigger
 	-- @field ls Left stick button
 	-- @field rs Right stick button
-	instance.currentState = {
+	self.currentState = {
 		a = false,
 		b = false,
 		x = false,
@@ -62,7 +84,7 @@ function InputManager.new()
 	-- @field rt Right trigger
 	-- @field ls Left stick button
 	-- @field rs Right stick button
-	instance.lastState = {
+	self.lastState = {
 		a = false,
 		b = false,
 		x = false,
@@ -81,29 +103,7 @@ function InputManager.new()
 		rs = false
 	}
 
-	--- A stack containing the most recently activated inputs in order
-	instance.stack = {}
-
-	--- Trigger deadzone
-	instance.triggerDeadzone = 0.5
-
-	--- Stick deadzone
-	instance.stickDeadzone = 0.3
-
-	--- Collection of all gamepads found on the system
-	instance.gamepads = {}
-
-	--- Currently enabled gamepad
-	instance.gamepad = nil
-
-	-- Load the SDL controller mapping db
-	love.joystick.loadGamepadMappings('assets/data/gamecontrollerdb.txt')
-
-	-- Add input manager to the autoupdater
-	Globals.updater:add(instance)
-
-	setmetatable(instance, InputManager)
-	return instance
+	self.stack = {}
 end
 
 --- Find all connected gamepads
@@ -239,10 +239,6 @@ function InputManager:update(dt)
 			end
 		end
 	end
-end
-
-function InputManager:emptyStack()
-	self.stack = {}
 end
 
 return InputManager

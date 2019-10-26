@@ -253,7 +253,7 @@ function Level:respawnPlayer()
 	if self.checkpoint then
 		self.ignoreCollision = true
 		Gamestate.push(Globals.gamestates.fade:pop())
-		Globals.input:emptyStack()
+		Globals.input:reset()
 		Globals.player.velocity.x = 0
 		Globals.player.velocity.y = 0
 		Globals.player:setPos(self.checkpoint.x, self.checkpoint.y)

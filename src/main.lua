@@ -8,6 +8,7 @@ Camera = require('lib.hump.camera')
 bump = require('lib.bump.bump')
 sti = require('lib.sti.sti')
 bitser = require('lib.bitser.bitser')
+Talkies = require('lib.talkies.talkies')
 
 local Config = require('core.config')
 local AutoUpdater = require('core.autoupdater')
@@ -83,10 +84,32 @@ function love.load()
 	Globals.updater = AutoUpdater.new()
 	Globals.input = InputManager.new()
 	Globals.input:findGamepads()
+	Globals.updater:add(Globals.input)
 	Globals.sound = SoundManager.new()
+
+	Talkies.font = love.graphics.newFont('assets/fonts/KiwiSoda.ttf', Globals.config.dialogFontSize)
 
 	Gamestate.registerEvents()
 	Gamestate.switch(Globals.gamestates.mainMenu)
+end
+
+-- Gamestates are responsible for calling this,
+-- so that updating is ignored if talkies is active
+-- @returns true if updating should be ignored by gamestate
+function Globals.updateTalkies(dt)
+	if Talkies.isOpen() then
+		if Globals.input:wasActivated('b') then
+			Talkies.onAction()
+		end
+		if Globals.input:wasActivated('up') then
+			Talkies.prevOption()
+		end
+		if Globals.input:wasActivated('down') then
+			Talkies.nextOption()
+		end
+		Talkies.update(dt)
+		return true
+	end
 end
 
 function love.update(dt)

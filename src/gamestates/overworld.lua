@@ -38,6 +38,10 @@ function Overworld:init()
 	}
 end
 
+function Overworld:enter()
+	Talkies.say('', 'It is a beautiful day and you are a gentle ghost')
+end
+
 function Overworld:draw()
 	love.graphics.clear()
 	love.graphics.setColor(255, 255, 255)
@@ -54,9 +58,12 @@ function Overworld:draw()
 	self.camera:attach()
 	self.cursorSprite:draw(level.x, level.y)
 	self.camera:detach()
+	Talkies.draw()
 end
 
 function Overworld:update(dt)
+	if Globals.updateTalkies(dt) then return end
+
 	local newIndex = nil
 
 	for i, key in ipairs(Globals.input.stack) do
@@ -66,16 +73,17 @@ function Overworld:update(dt)
 		elseif key == 'left' and self.cursorIndex > 1 then
 			newIndex = self.cursorIndex - 1
 			break
-		elseif key == 'a' then
-			Globals.gamestates.play:setLevel(self.levels[self.cursorIndex].levelClass)
-			if Globals.gamestates.play.inited then
-				Globals.gamestates.play:init()
-			end
-			Globals.gamestates.fade:setDuration(0.5)
-			Globals.gamestates.fade:setNextState(Globals.gamestates.play)
-			Gamestate.push(Globals.gamestates.fade)
-			break
 		end
+	end
+
+	if Globals.input:wasActivated('b') then
+		Globals.gamestates.play:setLevel(self.levels[self.cursorIndex].levelClass)
+		if Globals.gamestates.play.inited then
+			Globals.gamestates.play:init()
+		end
+		Globals.gamestates.fade:setDuration(0.5)
+		Globals.gamestates.fade:setNextState(Globals.gamestates.play)
+		Gamestate.push(Globals.gamestates.fade)
 	end
 
 	if newIndex ~= nil then

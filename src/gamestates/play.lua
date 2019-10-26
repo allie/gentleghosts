@@ -1,8 +1,6 @@
 --- Gameplay game state
 -- @module gamestates.play
 
-Talkies = require('lib.talkies.talkies')
-
 local Sprite = require('core.sprite')
 local Player = require('actor.player')
 local TestLevel = require('level.levels.test')
@@ -16,10 +14,6 @@ function Play:init()
 
 	Globals.player = Player.new()
 	Globals.player:setSprite(Sprite.new('assets/images/player/spooky.png', 16, 4, 0.3))
-
-
-	self.dialogFont = love.graphics.newFont('assets/fonts/KiwiSoda.ttf', Globals.config.dialogFontSize)
-	Talkies.font = self.dialogFont
 
 	self.level = self.levelClass.new()
 
@@ -38,20 +32,8 @@ function Play:draw()
 end
 
 function Play:update(dt)
-	if Talkies.isOpen() then
-		if Globals.input:wasActivated('a') or Globals.input:wasActivated('b') then
-			Talkies.onAction()
-		end
-		if Globals.input:wasActivated('up') then
-			Talkies.prevOption()
-		end
-		if Globals.input:wasActivated('down') then
-			Talkies.nextOption()
-		end
-		Talkies.update(dt)
-	else
-		self.level:update(dt)
-	end
+	if Globals.updateTalkies(dt) then return end
+	self.level:update(dt)
 end
 
 return Play
