@@ -32,6 +32,11 @@ function Fade:setNextState(state, replace)
 	self.nextState = state
 end
 
+function Fade:pop()
+	self.replace = true
+	return self
+end
+
 --- Capture an image of the existing screen to fade from
 function Fade:freezeScreen()
 	local instance = self
@@ -84,11 +89,12 @@ function Fade:update(dt)
 
 	if self.timer >= self.duration then
 		if self.replace or self.direction == 'prev' then
-			self.replace = false
 			Gamestate.pop()
 		elseif self.direction == 'next' then
 			Gamestate.push(self.nextState)
 		end
+
+		self.replace = false
 	end
 end
 

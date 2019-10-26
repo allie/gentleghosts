@@ -241,4 +241,8 @@ function InputManager:update(dt)
 	end
 end
 
+function InputManager:emptyStack()
+	self.stack = {}
+end
+
 return InputManager

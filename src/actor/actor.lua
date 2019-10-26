@@ -42,11 +42,6 @@ end
 function Actor:update(dt)
 end
 
-function Actor:setPos(x, y)
-	self.aabb.x = x
-	self.aabb.y = y
-end
-
 function Actor:getActionRect()
 	local l = self.aabb.x
 	if self.facing == 1 then

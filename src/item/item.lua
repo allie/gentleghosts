@@ -30,9 +30,6 @@ function Item.new(x, y, name, sprite)
 	instance.aabb.w = instance.sprite:getWidth()
 	instance.aabb.h = instance.sprite:getHeight()
 
-	-- Items shouldn't be solid
-	instance.isSolid = false
-
 	setmetatable(instance, Player)
 	return instance
 end

@@ -36,6 +36,11 @@ function Gameobject.new()
 	return instance
 end
 
+function Gameobject:setPos(x, y)
+	self.aabb.x = x
+	self.aabb.y = y
+end
+
 --- Update the object. This function is intended
 -- to be overridden by child classes.
 -- @param dt Delta time
