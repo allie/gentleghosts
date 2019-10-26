@@ -28,6 +28,8 @@ end
 --- Draw the HUD
 function Hud:draw()
 	love.graphics.setCanvas(self.canvas)
+	love.graphics.clear()
+
 	self.health:draw(10, 10, Globals.player.health.current)
 
 	for i, item in ipairs(Globals.player.heldItems) do
