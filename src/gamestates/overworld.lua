@@ -68,7 +68,9 @@ function Overworld:update(dt)
 			break
 		elseif key == 'a' then
 			Globals.gamestates.play:setLevel(self.levels[self.cursorIndex].levelClass)
-			Globals.gamestates.play:init()
+			if Globals.gamestates.play.inited then
+				Globals.gamestates.play:init()
+			end
 			Globals.gamestates.fade:setDuration(0.5)
 			Globals.gamestates.fade:setNextState(Globals.gamestates.play)
 			Gamestate.push(Globals.gamestates.fade)

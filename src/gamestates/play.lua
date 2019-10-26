@@ -12,6 +12,8 @@ local Play = {}
 Play.__index = Play
 
 function Play:init()
+	self.inited = true
+
 	Globals.player = Player.new()
 	Globals.player:setSprite(Sprite.new('assets/images/player/spooky.png', 16, 4, 0.3))
 

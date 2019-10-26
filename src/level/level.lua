@@ -4,11 +4,16 @@
 local Level = {}
 Level.__index = Level
 
+local DOOR_WIDTH = 50
+local DOOR_HEIGHT = 50
+
 --- Constructor
 -- @return A new Level instance
 -- @param mapFile Path to the Tiled map file
 function Level.new(mapFile)
 	local instance = {}
+
+	instance.type = 'level'
 
 	--- Background image
 	instance.bg = nil
@@ -30,6 +35,8 @@ function Level.new(mapFile)
 
 	--- Game objects affected by gravity
 	instance.objects = {}
+
+	instance.doors = {}
 
 	--- Gravity of the world in units/s^2
 	instance.gravity = 30
@@ -59,9 +66,7 @@ function Level.new(mapFile)
 
 			-- Add player to the game objects collection
 			table.insert(instance.objects, Globals.player)
-		end
-
-		if object.type == 'npc' then
+		elseif object.type == 'npc' then
 			local npc = require('actor.npc.' .. object.name).new()
 			npc:setPos(object.x, object.y)
 
@@ -69,20 +74,33 @@ function Level.new(mapFile)
 				instance.objects,
 				npc
 			)
-		end
-
-		if object.type == 'item' then
+		elseif object.type == 'item' then
 			table.insert(
 				instance.objects,
 				require('item.items.' .. object.name).new(object.x, object.y)
-
 			)
+		else
+			table.insert(instance.doors, {
+				type = object.type,
+				name = object.name,
+				isSolid = false,
+				aabb = {
+					x = object.x - DOOR_WIDTH / 2,
+					y = object.y - DOOR_HEIGHT / 2,
+					w = DOOR_WIDTH,
+					h = DOOR_HEIGHT
+				}
+			})
 		end
 	end
 
 	-- Add game objects to the world
 	for i, obj in ipairs(instance.objects) do
 		instance.world:add(obj, obj.aabb.x, obj.aabb.y, obj.aabb.w, obj.aabb.h)
+	end
+
+	for i, door in ipairs(instance.doors) do
+		instance.world:add(door, door.aabb.x, door.aabb.y, door.aabb.w, door.aabb.h)
 	end
 
 	-- Initialize STI with the world
@@ -125,6 +143,18 @@ function Level:update(dt)
 						end
 					end
 					break
+				elseif item.type == 'level' then
+					local level = require('level.levels.' .. item.name)
+					if level.unlocked() then
+						Globals.gamestates.fade:setNextState(Globals.gamestates.play, true)
+						Gamestate.push(Globals.gamestates.fade)
+						Globals.gamestates.play:setLevel(level)
+						Globals.gamestates.play:init()
+					end
+				elseif item.type == 'exit' then
+					Gamestate.pop()
+				else
+					print(item)
 				end
 			end
 		end

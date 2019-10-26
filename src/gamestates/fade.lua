@@ -27,7 +27,8 @@ end
 
 --- Set the next state the transition should fade to
 -- @param state The next state
-function Fade:setNextState(state)
+function Fade:setNextState(state, replace)
+	self.replace = replace
 	self.nextState = state
 end
 
@@ -82,10 +83,11 @@ function Fade:update(dt)
 	self.timer = self.timer + dt
 
 	if self.timer >= self.duration then
-		if self.direction == 'next' then
-			Gamestate.push(self.nextState)
-		elseif self.direction == 'prev' then
+		if self.replace or self.direction == 'prev' then
+			self.replace = false
 			Gamestate.pop()
+		elseif self.direction == 'next' then
+			Gamestate.push(self.nextState)
 		end
 	end
 end
