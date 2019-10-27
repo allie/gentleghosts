@@ -169,7 +169,7 @@ return {
       objects = {
         {
           id = 1,
-          name = "test",
+          name = "1.level",
           type = "level",
           shape = "point",
           x = 1265,

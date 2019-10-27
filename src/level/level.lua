@@ -96,6 +96,8 @@ function Level.new(mapFile)
 			table.insert(instance.doors, {
 				type = object.type,
 				name = object.name,
+				x = object.x,
+				y = object.y,
 				isSolid = false,
 				aabb = {
 					x = object.x - DOOR_WIDTH / 2,
@@ -123,11 +125,15 @@ function Level.new(mapFile)
 	return instance
 end
 
+function Level:enter()
+	self:respawnPlayer()
+end
+
 --- Update the game world
 -- @param dt Delta time
 function Level:update(dt)
 	-- Update the background
-	self.bg:update(dt)
+	if self.bg then self.bg:update(dt) end
 
 	-- Update all game objects
 	for i, obj in ipairs(self.objects) do
@@ -144,7 +150,7 @@ function Level:update(dt)
 			if item ~= Globals.player then
 				if item.type == 'npc' then
 					item:talk()
-					break
+					return
 				elseif item.type == 'item' then
 					if item.id ~= nil then
 						Globals.player.heldItems[item.id] = item
@@ -159,16 +165,17 @@ function Level:update(dt)
 							table.remove(self.objects, i)
 						end
 					end
-					break
+					return
 				elseif item.type == 'level' then
 					local level = require('level.levels.' .. item.name)
 					if level.unlocked() then
-						Gamestate.push(Globals.gamestates.fade:pop())
+						self.checkpoint = item
 						Globals.gamestates.play:setLevel(level)
-						Globals.gamestates.play:init()
+						return
 					end
 				elseif item.type == 'exit' then
 					Gamestate.pop()
+					return
 				end
 			end
 		end

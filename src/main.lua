@@ -71,6 +71,13 @@ function love.load()
 	Globals.config = Config.new('settings.lua')
 	Globals.config:load()
 
+	Globals.updater = AutoUpdater.new()
+	Globals.input = InputManager.new()
+	Globals.input:findGamepads()
+	Globals.updater:add(Globals.input)
+	Globals.sound = SoundManager.new()
+
+
 	Globals.gamestates = {
 		fade = FadeState,
 		mainMenu = MenuState,
@@ -78,14 +85,8 @@ function love.load()
 		audioMenu = AudioState,
 		controlsMenu = ControlsState,
 		overworld = OverworldState,
-		play = PlayState
+		play = PlayState.new()
 	}
-
-	Globals.updater = AutoUpdater.new()
-	Globals.input = InputManager.new()
-	Globals.input:findGamepads()
-	Globals.updater:add(Globals.input)
-	Globals.sound = SoundManager.new()
 
 	Talkies.font = love.graphics.newFont('assets/fonts/KiwiSoda.ttf', Globals.config.dialogFontSize)
 

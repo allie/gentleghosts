@@ -108,7 +108,7 @@
 </data>
  </layer>
  <objectgroup id="2" name="Levels">
-  <object id="1" name="test" type="level" x="1265" y="1703">
+  <object id="1" name="1.level" type="level" x="1265" y="1703">
    <properties>
     <property name="levelNum" type="int" value="1"/>
    </properties>
