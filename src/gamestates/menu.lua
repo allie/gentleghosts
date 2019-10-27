@@ -93,7 +93,7 @@ end
 
 --- Check whether the back button was pressed and the menu must be exited
 function Menu:checkExit()
-	return Globals.input:wasActivated('b') or Globals.input:wasActivated('back')
+	return Globals.input:wasActivated('back')
 end
 
 --- A basic update routine for a standard menu
